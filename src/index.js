@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const port = process.env.PORT || 8000 ;
+const hbs = require('hbs');
 
 // eituku dile css er path thik thakbe pore index.hbs file pore niye nibo
 
@@ -10,9 +11,15 @@ app.use(express.static(staticpath));
 
 // views er name change kore templete leka hoiche tai emn korsi
 
-const templetepath = path.join(__dirname , "../templates");
+const templetepath = path.join(__dirname , "../templates/views");
 app.set('view engine' , 'hbs');
 app.set('views' , templetepath)
+
+// partials path er jonno
+const partialspath = path.join(__dirname , "../templates/partials")
+hbs.registerPartials(partialspath)
+
+
 
 app.get('' , (req, res) =>{
     res.status(201).render('index',{name:"Morsalin"});
