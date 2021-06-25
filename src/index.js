@@ -9,7 +9,7 @@ app.use(express.static(staticpath));
 app.set('view engine' , 'hbs');
 
 app.get('' , (req, res) =>{
-    res.status(201).render('index');
+    res.status(201).render('index',{name:"Morsalin"});
 })
 
 app.listen(port , () =>{
