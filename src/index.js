@@ -18,6 +18,14 @@ app.get('' , (req, res) =>{
     res.status(201).render('index',{name:"Morsalin"});
 })
 
+app.get('/about' , (req, res) =>{
+    res.status(201).render('about' , {name : "about"});
+})
+
+app.get("*" , (req,res) =>{
+    res.status(404).send('404 file is error:)')
+})
+
 app.listen(port , () =>{
     console.log(`server port is ${port}`)
 })
