@@ -10,7 +10,7 @@ app.use(express.static(staticpath));
 
 // views er name change kore templete leka hoiche tai emn korsi
 
-const templetepath = path.join(__dirname , "../templete");
+const templetepath = path.join(__dirname , "../templates");
 app.set('view engine' , 'hbs');
 app.set('views' , templetepath)
 
